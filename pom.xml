@@ -77,9 +77,9 @@
                 <version>2.3</version>
                 <configuration>
                     <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-                   <!-- <failOnMissingWebXml>false</failOnMissingWebXml>-->
+                   <!-- <failOnMissingWebXml>false</failOnMissingWebXml>
                     <warName>workLogger</warName>
-                    <outputDirectory>c:\!disk\apache-tomcat-7.0.57\webapps\</outputDirectory>
+                    <outputDirectory>c:\!disk\apache-tomcat-7.0.57\webapps\</outputDirectory>-->
                 </configuration>
             </plugin>
             <plugin>
