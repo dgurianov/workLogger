@@ -98,8 +98,16 @@ table.actions td.border-left {border-right:  1px solid;}
     <c:forEach var="aItem" items="${inMemoryStorage.getAllRecordsAsList()}">
         <tr>
             <td width="30" class="border-right">
-            <b>
-              <c:out value="${aItem.id}" />
+                <b>
+              <c:choose>
+                    <c:when test="${aItem.id < 10}" >
+                        <c:out value="0${aItem.id}" />
+                    </c:when>
+                  <c:otherwise>
+                       <c:out value="${aItem.id}" />
+                  </c:otherwise>
+              </c:choose>
+                
             </b>
           </td>
           <td width="150" class="border-right">

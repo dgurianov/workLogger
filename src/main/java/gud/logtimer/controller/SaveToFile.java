@@ -34,9 +34,13 @@ public class SaveToFile extends HttpServlet{
         }else {
             outputFile = req.getParameter("outputFile").replaceAll("^\"|\"$", "");
             FileWriter fw = new FileWriter(outputFile);
-            fw.write("Num 	 |Time start 	 |Time end 	 |Time delta 	|Task description\n");
+            fw.write("Num|Time start 	 |Time end 	 |Time delta 	|Task description\n");
             for (LogRecord lr : storage.getAllRecordsAsList()){
-                fw.write(lr.toString()+"\n");
+                if (lr.getId() < 10 ){
+                    fw.write("0"+lr.toString()+"\n");
+                }else {
+                    fw.write(lr.toString()+"\n");
+                }
             }
             fw.close();
             storage.cleanAll();
